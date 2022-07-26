@@ -1,13 +1,61 @@
-body {
+body,
+html {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: hsl(218deg, 23%, 16%);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.container {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  background-color: hsl(217deg, 19%, 24%);
+  height: 20em;
+  width: 35em;
+  border-radius: 3%;
+  font-family: "Manrope", sans-serif;
+  box-shadow: 0 5px 20px black;
+}
+.container h3 {
+  color: hsl(150deg, 100%, 66%);
+  margin: 1.875em 0 1.25em;
+  letter-spacing: 0.2em;
+}
+.container .box {
+  width: 24em;
+  height: 24em;
+  margin: auto;
+  padding: 0 4em;
+}
+.container .box p {
+  color: hsl(193deg, 38%, 86%);
+  margin: 0 0 1.875em;
+  font-size: 1.75em;
+  font-weight: 800;
+}
+.container .box .divider {
+  width: 24em;
+  height: 1.3em;
+  text-align: center;
+  margin-bottom: 1.25em;
+}
+.container button {
+  background-color: hsl(150deg, 100%, 66%);
+  border-radius: 50%;
+  border: none;
+  width: 4.375em;
+  height: 4.375em;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+}
+.container button img {
+  margin: auto;
+}/*# sourceMappingURL=index.css.map */

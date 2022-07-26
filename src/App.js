@@ -1,23 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+// import logo from "./logo.svg";
+import "./index.css";
+// SVG's
+import icon from "./images/icon-dice.svg";
+import divider from "./images/pattern-divider-desktop.svg";
+
+const url = "https://api.adviceslip.com/advice";
 
 function App() {
+  const [quotes, setQuotes] = useState("");
+  const [number, setNumber] = useState("");
+
+  const [loading, setLoading] = useState(true);
+
+  const fetchData = async () => {
+    setLoading(true);
+
+    try {
+      const response = await fetch(url, { cache: "no-cache" });
+      const quote = await response.json();
+      setLoading(false);
+      setNumber(quote.slip.id);
+      setQuotes(quote.slip.advice);
+      if (response.status !== 200) {
+        // making yor own error
+        throw new Error("cannont fetch the data");
+      }
+    } catch (error) {
+      setLoading(false);
+      console.log(error);
+    }
+  };
+
+  const handleClick = () => {
+    fetchData();
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h3>ADVICE # {number}</h3>
+      <div className="box">
+        {loading ? <p>Loading...</p> : <p>"{quotes}"</p>}
+        <img className="divider" src={divider} alt="page divider" />
+        <button onClick={handleClick}>
+          <img src={icon} alt="dice icon" />
+        </button>
+      </div>
     </div>
   );
 }
