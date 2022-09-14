@@ -42,9 +42,9 @@ function App() {
 
   return (
     <div className="container">
-      <h3>ADVICE # {number}</h3>
+      <h1>ADVICE # {number}</h1>
       <div className="box">
-        {loading ? <p>Loading...</p> : <p>"{quotes}"</p>}
+        {loading ? <p>Loading...</p> : <p>"{quotes}"</p>}{" "}
         <img className="divider" src={divider} alt="page divider" />
         <button onClick={handleClick}>
           <img src={icon} alt="dice icon" />
