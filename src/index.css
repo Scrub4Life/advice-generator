@@ -17,22 +17,23 @@ body {
   text-align: center;
   flex-direction: column;
   background-color: hsl(217deg, 19%, 24%);
-  height: 20em;
-  width: 35em;
   border-radius: 3%;
   font-family: "Manrope", sans-serif;
-  box-shadow: 0 5px 20px black;
+   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
-.container h3 {
+.container h1 {
   color: hsl(150deg, 100%, 66%);
-  margin: 1.875em 0 1.25em;
-  letter-spacing: 0.2em;
+  margin: 1em 0;
+  letter-spacing: 0.1em;
 }
 .container .box {
   width: 24em;
-  height: 24em;
   margin: auto;
   padding: 0 4em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 .container .box p {
   color: hsl(193deg, 38%, 86%);
@@ -46,16 +47,28 @@ body {
   text-align: center;
   margin-bottom: 1.25em;
 }
-.container button {
+.container .box button {
   background-color: hsl(150deg, 100%, 66%);
   border-radius: 50%;
   border: none;
   width: 4.375em;
   height: 4.375em;
-  text-align: center;
-  position: relative;
-  bottom: 0;
+  padding: 0;
+  cursor: pointer;
 }
-.container button img {
+.container .box button img {
   margin: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    margin: 0 1rem;
+  }
+  .box {
+    width: auto;
+    padding: 0;
+  }
+  .divider {
+    width: 18rem;
+  }
 }/*# sourceMappingURL=index.css.map */

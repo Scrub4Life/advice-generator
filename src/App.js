@@ -44,7 +44,7 @@ function App() {
     <div className="container">
       <h1>ADVICE # {number}</h1>
       <div className="box">
-        {loading ? <p>Loading...</p> : <p>"{quotes}"</p>}{" "}
+        {loading ? <p>Loading...</p> : <p>"{quotes}"</p>}
         <img className="divider" src={divider} alt="page divider" />
         <button onClick={handleClick}>
           <img src={icon} alt="dice icon" />
