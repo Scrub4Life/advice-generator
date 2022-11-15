@@ -46,9 +46,11 @@ function App() {
       <div className="box">
         {loading ? <p>Loading...</p> : <p>"{quotes}"</p>}
         <img className="divider" src={divider} alt="page divider" />
-        <button onClick={handleClick}>
-          <img src={icon} alt="dice icon" />
-        </button>
+        <div>
+          <button onClick={handleClick}>
+            <img src={icon} alt="dice icon" />
+          </button>
+        </div>
       </div>
     </div>
   );
